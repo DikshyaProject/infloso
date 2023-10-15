@@ -20,6 +20,9 @@ class _CreateAccountState extends State<CreateAccount> {
   TextEditingController email = TextEditingController();
   TextEditingController pass = TextEditingController();
   TextEditingController Name = TextEditingController();
+  bool isInfluencer = true;
+  bool isBrand = false;
+  bool isAgency = false;
 
   @override
   Widget build(BuildContext context) {
@@ -39,42 +42,87 @@ class _CreateAccountState extends State<CreateAccount> {
               vSizedBox40,
 
               ParagraphText('Email', fontSize: 15,fontWeight: FontWeight.w600, color: MyColors.primaryColor,),
-              vSizedBox10,
+              vSizedBox05,
 
               CustomTextField(
                   controller: email,
                   keyboardType: TextInputType.emailAddress,
                   hintText: 'Email ID'),
-              vSizedBox10,
+              vSizedBox20,
               ParagraphText('Tell as who you are', fontSize: 15,fontWeight: FontWeight.w600, color: MyColors.primaryColor,),
               vSizedBox10,
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
 
-                Column(children: [
-                  ParagraphText('Influencer', fontSize: 15,fontWeight: FontWeight.w600, color: MyColors.blackColor,),
+                GestureDetector(
+                  behavior: HitTestBehavior.opaque,
+                  onTap: (){
+                    setState(() {
+                      isInfluencer=true;
+                      isBrand=false;
+                      isAgency=false;
+                    });
+                  },
+                  child: Container(
+                    child: Column(children: [
+                      Image.asset(MyImages.create_1, height: 80, color: isInfluencer==true? MyColors.primaryColor : MyColors.grey1,),
+                      ParagraphText('Influencer', fontSize: 14,fontWeight: FontWeight.w600,
+                        color: isInfluencer==true? MyColors.primaryColor : MyColors.grey1,
+                      ),
 
-                ],),
-                Column(children: [
-                  ParagraphText('Brand', fontSize: 15,fontWeight: FontWeight.w600, color: MyColors.blackColor,),
+                    ],),
+                  ),
+                ),
+                GestureDetector(
+                  behavior: HitTestBehavior.opaque,
+                  onTap: (){
+                    setState(() {
+                      isInfluencer=false;
+                      isBrand=true;
+                      isAgency=false;
+                    });
+                  },
+                  child: Container(
+                    child: Column(children: [
+                      Image.asset(MyImages.create_2, height: 80, color: isBrand==true? MyColors.primaryColor : MyColors.grey1,),
+                      ParagraphText('Brand', fontSize: 14,fontWeight: FontWeight.w600,
+                        color: isBrand==true? MyColors.primaryColor : MyColors.grey1,
+                      ),
 
-                ],),
-                Column(children: [
-                  ParagraphText('Agency', fontSize: 15,fontWeight: FontWeight.w600, color: MyColors.blackColor,),
+                    ],),
+                  ),
+                ),
+                GestureDetector(
+                  behavior: HitTestBehavior.opaque,
+                  onTap: (){
+                    setState(() {
+                      isInfluencer=false;
+                      isBrand=false;
+                      isAgency=true;
+                    });
+                  },
+                  child: Container(
+                    child: Column(children: [
+                      Image.asset(MyImages.create_3, height: 80,  color: isAgency==true? MyColors.primaryColor : MyColors.grey1,),
+                      ParagraphText('Agency', fontSize: 14,fontWeight: FontWeight.w600,
+                        color: isAgency==true? MyColors.primaryColor : MyColors.grey1,
+                      ),
 
-                ],),
+                    ],),
+                  ),
+                ),
               ],),
-              vSizedBox10,
+              vSizedBox20,
               ParagraphText('Whats your name?', fontSize: 15,fontWeight: FontWeight.w600, color: MyColors.primaryColor,),
-              vSizedBox10,
+              vSizedBox05,
               CustomTextField(
                   controller: Name,
                   hintText: 'Name'),
 
-              vSizedBox10,
+              vSizedBox20,
               ParagraphText('Password', fontSize: 15,fontWeight: FontWeight.w600, color: MyColors.primaryColor,),
-              vSizedBox10,
+              vSizedBox05,
               CustomTextField(
                   controller: pass,
                   hintText: 'Password'),
@@ -84,7 +132,7 @@ class _CreateAccountState extends State<CreateAccount> {
 
               RoundEdgedButton(
                 text: 'Create an Account',
-                fontSize: 18,
+                fontSize: 14,
                 fontWeight: FontWeight.w600,
                 onTap: (){
                   //loginWithEmail();
@@ -94,14 +142,14 @@ class _CreateAccountState extends State<CreateAccount> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  ParagraphText('Already have an account', fontSize: 15, color: MyColors.grey2,),
+                  ParagraphText('Already have an account', fontSize: 14, color: MyColors.grey2,),
                   hSizedBox05,
                   GestureDetector(
                       behavior: HitTestBehavior.opaque,
                       onTap: (){
                         pushReplacement(context: context, screen: LoginWithPhone());
                       },
-                      child: ParagraphText('Log in', fontSize: 16, fontWeight: FontWeight.w600, color: MyColors.primaryColor,)),
+                      child: ParagraphText('Log in', fontSize: 15, fontWeight: FontWeight.w600, color: MyColors.primaryColor,)),
                 ],
               ),
             ],

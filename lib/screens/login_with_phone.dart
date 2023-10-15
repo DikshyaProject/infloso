@@ -52,14 +52,14 @@ class _LoginWithPhoneState extends State<LoginWithPhone> {
 
               RoundEdgedButton(
                 text: 'Login',
-                fontSize: 18,
+                fontSize: 14,
                 fontWeight: FontWeight.w600,
                 onTap: (){push(context: context, screen: OtpScreen());},
               ),
               vSizedBox10,
               RoundEdgedButton(
                 text: 'LOGIN IN VIA EMAIL',
-                fontSize: 16,
+                fontSize: 14,
                 fontWeight: FontWeight.w600,
                 iconSize: 25,
                 color: MyColors.grey11,
@@ -76,14 +76,14 @@ class _LoginWithPhoneState extends State<LoginWithPhone> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  ParagraphText('Not signed up yet?', fontSize: 15, color: MyColors.grey2,),
+                  ParagraphText('Not signed up yet?', fontSize: 14, color: MyColors.grey2,),
                   hSizedBox05,
                   GestureDetector(
                     behavior: HitTestBehavior.opaque,
                       onTap: (){
                       pushReplacement(context: context, screen: CreateAccount());
                       },
-                      child: ParagraphText('Create an account', fontSize: 16, fontWeight: FontWeight.w600, color: MyColors.primaryColor,)),
+                      child: ParagraphText('Create an account', fontSize: 15, fontWeight: FontWeight.w600, color: MyColors.primaryColor,)),
                 ],
               ),
 

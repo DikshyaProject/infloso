@@ -63,24 +63,12 @@ class _LoginWithMailState extends State<LoginWithMail> {
 
               RoundEdgedButton(
                 text: 'Login',
-                fontSize: 18,
+                fontSize: 14,
                 fontWeight: FontWeight.w600,
                 onTap: (){
                  push(context: context, screen: BottomBar());
                 },
-              )
-            ],
-          ),
-        ),
-      ),
-
-      bottomNavigationBar: Container(
-        height: MediaQuery.of(context).size.height*0.28,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: Column(
-            children: [
-
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
@@ -91,7 +79,7 @@ class _LoginWithMailState extends State<LoginWithMail> {
 
               RoundEdgedButton(
                 text: 'LOGIN IN VIA PHONE',
-                fontSize: 16,
+                fontSize: 14,
                 fontWeight: FontWeight.w600,
                 iconSize: 27,
                 color: MyColors.grey11,
@@ -108,6 +96,8 @@ class _LoginWithMailState extends State<LoginWithMail> {
           ),
         ),
       ),
+
+
     );
   }
 }

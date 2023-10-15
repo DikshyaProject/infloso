@@ -48,7 +48,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
 
               RoundEdgedButton(
                 text: 'Send',
-                fontSize: 18,
+                fontSize: 14,
                 fontWeight: FontWeight.w600,
                 onTap: (){
 
@@ -60,14 +60,14 @@ class _ForgotPasswordState extends State<ForgotPassword> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  ParagraphText('Back to ', fontSize: 15, color: MyColors.grey2,),
+                  ParagraphText('Back to ', fontSize: 14, color: MyColors.grey2,),
                   hSizedBox05,
                   GestureDetector(
                       behavior: HitTestBehavior.opaque,
                       onTap: (){
                         pushReplacement(context: context, screen: LoginWithMail());
                       },
-                      child: ParagraphText('Login', fontSize: 16, fontWeight: FontWeight.w600, color: MyColors.primaryColor,)),
+                      child: ParagraphText('Login', fontSize: 15, fontWeight: FontWeight.w600, color: MyColors.primaryColor,)),
                 ],
               ),
 

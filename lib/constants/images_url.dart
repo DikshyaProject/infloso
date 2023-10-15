@@ -13,5 +13,8 @@ class MyImages{
   static const privacy = baseImageUrl + 'shield.png';
   static const loader = baseImageUrl + 'loader.png';
   static const rightarrow = baseImageUrl + 'right-arrow.png';
+  static const create_1 = baseImageUrl + 'create_1.png';
+  static const create_2 = baseImageUrl + 'create_2.png';
+  static const create_3 = baseImageUrl + 'create_3.png';
 
   }
